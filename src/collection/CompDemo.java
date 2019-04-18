@@ -13,6 +13,7 @@ public class CompDemo {
         ts.add("E");
         ts.add("F");
         ts.add("D");
+        ts.add("D");
         //Display the elements
         for(String element:ts){
             System.out.println(element + " ");
