@@ -1,0 +1,34 @@
+1.数组怎么使用lambda
+数组不能直接在forEach中使用lambda表达式
+
+        PartnerType[] values = PartnerType.values();
+        //提示Cannot resolve method 'forEach(<method reference>)
+        values.forEach(System.out::println);//错误使用
+想要使用必须转换，如下
+
+（1）转成list
+
+（2）转成steam
+
+ 
+
+        PartnerType[] values = PartnerType.values();
+        Arrays.stream(values).forEach(System.out::println);//转成流
+        Arrays.asList(values).forEach(System.out::println);//转成list
+2.集合怎么使用lambda
+（1）list在forEach中使用lambda
+
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("a");
+        arrayList.add("b");
+        arrayList.add("c");
+        arrayList.forEach(System.out::println);
+（2）map在forEach中使用lambda
+
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("a",1);
+        hashMap.put("b",2);
+        hashMap.put("c",3);
+        hashMap.put("d",4);
+        hashMap.forEach((k,v)->System.out.println(k+"_"+v.intValue()));
+ 
